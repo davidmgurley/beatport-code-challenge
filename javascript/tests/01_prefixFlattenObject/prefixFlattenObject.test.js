@@ -7,8 +7,23 @@
  * @returns {Object}
  */
 const prefixFlattenObject = (obj, prefix = '') => { // eslint-disable-line no-unused-vars
-    // Write your solution here
-};
+
+    var finalFlatObject = {}
+	
+	for (var prop in obj) {
+		
+		if ((typeof obj[prop]) == 'object' && !Array.isArray(obj[prop])) {
+			var flatObject = prefixFlattenObject(obj[prop])
+			for (var prefixProp in flatObject) {
+				
+				finalFlatObject[prop + '_' + prefixProp] = flatObject[prefixProp]
+			}
+		} else {
+			finalFlatObject[prop] = obj[prop]
+		}
+    }
+	return finalFlatObject;
+}
 
 const input = {
     prop0: 'value0',
