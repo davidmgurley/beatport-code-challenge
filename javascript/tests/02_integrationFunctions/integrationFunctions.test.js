@@ -10,8 +10,16 @@ import axios from 'axios';
  * @returns {Object}
  */
 export const integrationFunctions = integrationConfig => { // eslint-disable-line no-unused-vars
-    // Write your solution here
-};
+        const apiFunctions = {}
+        for (const prop in integrationConfig) {
+            apiFunctions[prop] = integrationConfig[prop].methods.reduce((collectedMethods, method) => {
+                collectedMethods[method] = (id, config) => fetch(!id ? integrationConfig[prop].url : integrationConfig[prop].url.replace(':id', id.id), method, config)
+                return collectedMethods
+            }, {})
+        }
+        return apiFunctions
+    }
+
 
 /**
  *
