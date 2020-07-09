@@ -20,7 +20,7 @@ const initResize = () => {
 
     function dragElement (e) {
         endPosition = e.clientY
-        panel.style.backgroundColor = 'rgb(' + endPosition + ', ' + Math.abs(positionDifference) + ', 0)'
+        panel.style.backgroundColor = 'rgb(' +  Math.abs(positionDifference) + ', ' + endPosition + ', 0)'
         positionDifference = startPosition - endPosition
         panel.style.height = startHeight + positionDifference
     }
