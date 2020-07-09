@@ -1,0 +1,140 @@
+[
+    {
+      "title": "The Velvet Underground & Nico",
+      "artist": "The Velvet Underground and Nico",
+      "coverArt": "https://static.billboard.com/files/media/The-Velvet-Underground-Nico-greatest-album-covers-billboard-1000x1000-compressed.jpg",
+      "releaseYear": "1967"
+    },
+    {
+        "title": "Abbey Road",
+        "artist": "The Beatles",
+        "coverArt": "https://static.billboard.com/files/media/The-Beatles-Abbey-Road-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1969"
+      },
+      {
+        "title": "Horses",
+        "artist": "Patti Smith",
+        "coverArt": "https://static.billboard.com/files/media/Patti-Smith-Horses-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1975"
+      },
+      {
+        "title": "Ready to Die",
+        "artist": "The Notorious B.I.G.",
+        "coverArt": "https://static.billboard.com/files/media/The-Notorious-B-I-G-Ready-to-Die-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1994"
+      },
+      {
+        "title": "Led Zeppelin",
+        "artist": "Led Zeppelin",
+        "coverArt": "https://static.billboard.com/files/media/Led-Zeppelin-Led-Zeppelin-greatest-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1969"
+      },
+      {
+        "title": "Dark Side of the Moon",
+        "artist": "Pink Floyd",
+        "coverArt": "https://static.billboard.com/files/media/Pink-Floyd-Dark-Side-of-the-Moon-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1973"
+      },
+      {
+        "title": "Nevermind",
+        "artist": "Nirvana",
+        "coverArt": "https://static.billboard.com/files/media/Nirvana-Nevermind-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1991"
+      },
+      {
+        "title": "She's So Unusual",
+        "artist": "Cyndi Lauper",
+        "coverArt": "https://static.billboard.com/files/media/Cyndi-Lauper-Shes-So-Unusual-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1983"
+      },
+      {
+        "title": "Fear of a Black Planet",
+        "artist": "Public Enemy",
+        "coverArt": "https://static.billboard.com/files/media/Public-Enemy-Fear-of-a-Black-Planet-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1990"
+      },
+      {
+        "title": "Elvis Presley",
+        "artist": "Elvis Presley",
+        "coverArt": "https://static.billboard.com/files/media/Elvis-Presley-Elvis-Presley-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1956"
+      },
+      {
+        "title": "Sgt. Pepper's Lonely Hearts Club Band",
+        "artist": "The Beatles",
+        "coverArt": "https://static.billboard.com/files/media/The-Beatles-Sgt-Peppers-lonely-hearts-club-band-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1967"
+      },
+      {
+        "title": "To Pimp a Butterfly",
+        "artist": "Kendrick Lamar",
+        "coverArt": "https://static.billboard.com/files/media/To-pimp-a-butterfly-kendrick-lamar-no1-albums-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "2015"
+      },
+      {
+        "title": "Enema of the State",
+        "artist": "Blink-182",
+        "coverArt": "https://static.billboard.com/files/media/Blink-182-Enema-of-the-State-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1999"
+      },
+      {
+        "title": "Illmatic",
+        "artist": "Nas",
+        "coverArt": "https://static.billboard.com/files/media/Nas-Illmatic-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1994"
+      },
+      {
+        "title": "London Calling",
+        "artist": "The Clash",
+        "coverArt": "https://static.billboard.com/files/media/The-Clash-London-Calling-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1979"
+      },
+      {
+        "title": "Abraxas",
+        "artist": "Santana",
+        "coverArt": "https://static.billboard.com/files/media/Santana-Abraxas-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1970"
+      },
+      {
+        "title": "Things Fall Apart",
+        "artist": "The Roots",
+        "coverArt": "https://static.billboard.com/files/media/The-Roots-Things-Fall-Apart-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1999"
+      },
+      {
+        "title": "British Steel",
+        "artist": "Judas Priest",
+        "coverArt": "https://static.billboard.com/files/media/Judas-Priest-British-Steel-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1980"
+      },
+      {
+        "title": "Aladdin Sane",
+        "artist": "David Bowie",
+        "coverArt": "https://static.billboard.com/files/media/David-Bowie-Aladdin-Sane-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1973"
+      },
+      {
+        "title": "Rumours",
+        "artist": "Fleetwood Mac",
+        "coverArt": "https://static.billboard.com/files/media/Fleetwood-Mac-Rumours-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1977"
+      },
+      {
+        "title": "Master of Puppets",
+        "artist": "Metallica",
+        "coverArt": "https://static.billboard.com/files/media/Metallica-Master-of-Puppets-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "1986"
+      },
+      {
+        "title": "Beyonce",
+        "artist": "Beyonce",
+        "coverArt": "https://static.billboard.com/files/media/Beyonce-Beyonce-greatest-album-covers-billboard-1000x1000-compressed.jpg",
+        "releaseYear": "2013"
+      },
+      {
+        "title": "Jeffery",
+        "artist": "Young Thug",
+        "coverArt": "https://static.billboard.com/files/media/Young-Thug-Jeffery-2016-billboard-1240-1024x1024.jpg",
+        "releaseYear": "2016"
+      }
+]

@@ -4,7 +4,7 @@ import './slider.scss';
 /**
  * @type {React.Component}
  *
- * @description Create a Slider/Carousel using modern react. It's up to you to add styles. 
+ * @description Create a Slider/Carousel using modern react. It's up to you to add styles.
  * Sass is available, but feel free to use any styling solution you. CSS-in-JS, CSS, etc.
  * This component needs to be reusable and customizable. Multiple instances of this component
  * should be able to exist in the same view.
@@ -18,7 +18,12 @@ import './slider.scss';
 export const Slider = () => {
     return (
         <div className="slider">
-            Write Code Here
+            <div className="mainSlider">
+                <img alt="" src={'https://static.billboard.com/files/media/Nirvana-Nevermind-album-covers-billboard-1000x1000-compressed.jpg'} img/>
+            </div>
+            <div className="verticalSlider">
+                vertical slider
+            </div>
         </div>
     );
 };
