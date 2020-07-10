@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'; // eslint-disable-line no-unused-vars
 import './slider.scss';
 
 /**
@@ -15,15 +15,57 @@ import './slider.scss';
  * c. The Slider should be able to take different types of slides. For example,
  * it could be a single image or a set of tiles. Reference Beatport.com for an example
  */
-export const Slider = () => {
+
+/* eslint-disable no-console */
+
+export const Slider = props => {
+
+    const [slideIndex, setSlideIndex] = useState(0);
+    const [dividedTiles, setDividedTiles] = useState([]);
+
+    useEffect(() => {
+        setDividedTiles(divideTilesByGroupSize(props.displayGroup, props.displayTiles));
+    }, []);
+
+    const handleIndexChange = () => {
+        var slide = slideIndex;
+        setSlideIndex(slide + 1);
+        console.log(slideIndex);
+    };
+
+    const divideTilesByGroupSize = (groupSize, displayTiles) => {
+        const arrayOfArrays = [];
+        for (var i = 0; i < displayTiles.length; i += groupSize) {
+            arrayOfArrays.push(displayTiles.slice(i,i + groupSize));
+        }
+        return arrayOfArrays;
+    };
+
     return (
         <div className="slider">
             <div className="mainSlider">
-                <img alt="" src={'https://static.billboard.com/files/media/Nirvana-Nevermind-album-covers-billboard-1000x1000-compressed.jpg'} img/>
+                {dividedTiles.map((group, index) => {
+                    return <div>
+                        {index === slideIndex ? group.map(tile => {
+                            return tile.title;
+                        }) : ''}
+                    </div>;
+                })}
             </div>
-            <div className="verticalSlider">
-                vertical slider
-            </div>
+            <button onClick={handleIndexChange}>increment</button>
         </div>
     );
+};
+
+Slider.defaultProps = {
+    interval: 4,
+    displayGroup: 1,
+    displayTiles: [
+        {
+            artist: 'Pink Floyd',
+            coverArt: 'https://static.billboard.com/files/media/Pink-Floyd-Dark-Side-of-the-Moon-album-covers-billboard-1000x1000-compressed.jpg',
+            releaseYear: '1973',
+            title: 'Dark Side of the Moon'
+        }
+    ]
 };
