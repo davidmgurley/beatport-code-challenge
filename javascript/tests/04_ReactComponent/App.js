@@ -21,7 +21,7 @@ const App = () => {
         <React.Fragment>
             <Slider
                 displayTiles={shuffledArray}
-                displayGroup={10}
+                displayGroup={9}
             />
         </React.Fragment>
     );

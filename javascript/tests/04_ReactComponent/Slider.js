@@ -78,16 +78,6 @@ export const Slider = props => {
                             })}
                         </div> : '';
                 })}
-                {/* {dividedTiles.map((group, index) => {
-                    <div className={groupDivisibilityClass}>
-                        {index === slideIndex ?
-                        group.map(tile => {
-                            return <div className="tile-group">
-                                <img alt={''} src={tile.coverArt}/>
-                            </div>;
-                        }) : ''}
-                    </div>;
-                })} */}
                 <div>
                     <button onClick={handlePageRight}>right</button>
                 </div>
