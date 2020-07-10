@@ -1,8 +1,6 @@
 .slider {
     display: block;
     background-color: black;
-    height: 20%;
-    width: 50%;
 }
 
 .album-group-default {
@@ -54,7 +52,7 @@
 img {
     animation-name: fadeIn;
     animation-duration: .5s;
-    animation-timing-function: ease-in;
+    animation-timing-function: ease-in-out;
   }
 
 // .tile-group {

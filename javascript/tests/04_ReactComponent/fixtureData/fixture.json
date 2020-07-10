@@ -118,29 +118,5 @@
         "artist": "Fleetwood Mac",
         "coverArt": "https://static.billboard.com/files/media/Fleetwood-Mac-Rumours-album-covers-billboard-1000x1000-compressed.jpg",
         "releaseYear": "1977"
-      },
-      {
-        "title": "Master of Puppets",
-        "artist": "Metallica",
-        "coverArt": "https://static.billboard.com/files/media/Metallica-Master-of-Puppets-album-covers-billboard-1000x1000-compressed.jpg",
-        "releaseYear": "1986"
-      },
-      {
-        "title": "Beyonce",
-        "artist": "Beyonce",
-        "coverArt": "https://static.billboard.com/files/media/Beyonce-Beyonce-greatest-album-covers-billboard-1000x1000-compressed.jpg",
-        "releaseYear": "2013"
-      },
-      {
-        "title": "Jeffery",
-        "artist": "Young Thug",
-        "coverArt": "https://static.billboard.com/files/media/Young-Thug-Jeffery-2016-billboard-1240-1024x1024.jpg",
-        "releaseYear": "2016"
-      },
-      {
-        "title": "1989",
-        "artist": "Taylor Swift",
-        "coverArt": "https://static.billboard.com/files/media/Taylor-Swift-1989-album-covers-billboard-1000x1000-compressed.jpg",
-        "releaseYear": "2014"
       }
 ]

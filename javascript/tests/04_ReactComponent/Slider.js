@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'; // eslint-disable-line no-unused-vars
+import { SliderNavigation } from './SliderNavigation';
 import './slider.scss';
 
 /**
@@ -62,6 +63,10 @@ export const Slider = props => {
         setSlideIndex(newIndex);
     };
 
+    const handleNavIndex = (index) => {
+        setSlideIndex(index);
+    };
+
     return (
         <div className="slider">
             <div className="mainSlider">
@@ -80,6 +85,14 @@ export const Slider = props => {
                 })}
                 <div>
                     <button onClick={handlePageRight}>right</button>
+                </div>
+                <div className="lowerNav">
+                    {dividedTiles.map((group, index) => {
+                        return <SliderNavigation
+                            index={index}
+                            handleNavIndex={handleNavIndex}
+                        />;
+                    })}
                 </div>
             </div>
         </div>

@@ -21,7 +21,15 @@ const App = () => {
         <React.Fragment>
             <Slider
                 displayTiles={shuffledArray}
-                displayGroup={9}
+                displayGroup={3}
+            />
+            <Slider
+                displayTiles={shuffledArray}
+                displayGroup={2}
+            />
+            <Slider
+                displayTiles={shuffledArray}
+                displayGroup={10}
             />
         </React.Fragment>
     );
