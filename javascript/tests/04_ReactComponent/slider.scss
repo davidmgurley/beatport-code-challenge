@@ -5,7 +5,14 @@
     width: 50%;
 }
 
-.album-group-2, .album-group-default {
+.album-group-default {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 16px;
+
+}
+
+.album-group-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 16px;
