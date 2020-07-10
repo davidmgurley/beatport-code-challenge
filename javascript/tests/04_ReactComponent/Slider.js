@@ -22,9 +22,11 @@ export const Slider = props => {
 
     const [slideIndex, setSlideIndex] = useState(0);
     const [dividedTiles, setDividedTiles] = useState([]);
+    const [groupDivisibility, setGroupDivisibility] = useState(2);
 
     useEffect(() => {
         setDividedTiles(divideTilesByGroupSize(props.displayGroup, props.displayTiles));
+        checkGroupDivisibility(props.displayGroup.length);
     }, []);
 
     const handleIndexChange = () => {
@@ -41,13 +43,23 @@ export const Slider = props => {
         return arrayOfArrays;
     };
 
+    const checkGroupDivisibility = (groupSize) => {
+        if (groupSize % 2 === 0) {
+            setGroupDivisibility(2);
+        }
+    };
+
+    console.log(groupDivisibility);
+
     return (
         <div className="slider">
             <div className="mainSlider">
                 {dividedTiles.map((group, index) => {
-                    return <div>
+                    return <div className={props.displayGroup > 1 ? 'album-grid' : 'album-single'} >
                         {index === slideIndex ? group.map(tile => {
-                            return tile.title;
+                            return <div className="tile-group">
+                                <img alt={''} src={tile.coverArt}/>
+                            </div>;
                         }) : ''}
                     </div>;
                 })}
