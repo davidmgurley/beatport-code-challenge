@@ -22,18 +22,12 @@ export const Slider = props => {
 
     const [slideIndex, setSlideIndex] = useState(0);
     const [dividedTiles, setDividedTiles] = useState([]);
-    const [groupDivisibility, setGroupDivisibility] = useState(2);
+    const [groupDivisibilityClass, setGroupDivisibilityClass] = useState('album-group-default');
 
     useEffect(() => {
         setDividedTiles(divideTilesByGroupSize(props.displayGroup, props.displayTiles));
-        checkGroupDivisibility(props.displayGroup.length);
+        checkGroupDivisibility(props.displayGroup);
     }, []);
-
-    const handleIndexChange = () => {
-        var slide = slideIndex;
-        setSlideIndex(slide + 1);
-        console.log(slideIndex);
-    };
 
     const divideTilesByGroupSize = (groupSize, displayTiles) => {
         const arrayOfArrays = [];
@@ -45,17 +39,37 @@ export const Slider = props => {
 
     const checkGroupDivisibility = (groupSize) => {
         if (groupSize % 2 === 0) {
-            setGroupDivisibility(2);
+            setGroupDivisibilityClass('album-group-2');
+        }
+        if (groupSize % 3 === 0) {
+            setGroupDivisibilityClass('album-group-3');
+        }
+        if (groupSize % 4 === 0) {
+            setGroupDivisibilityClass('album-group-4');
+        }
+        if (groupSize % 5 === 0) {
+            setGroupDivisibilityClass('album-group-5');
         }
     };
 
-    console.log(groupDivisibility);
+    const handlePageLeft = () => {
+        const newIndex = slideIndex > 0 ? slideIndex - 1 : dividedTiles.length - 1;
+        setSlideIndex(newIndex);
+    };
+
+    const handlePageRight = () => {
+        const newIndex = slideIndex < dividedTiles.length - 1 ? slideIndex + 1 : 0;
+        setSlideIndex(newIndex);
+    };
 
     return (
         <div className="slider">
             <div className="mainSlider">
+                <div>
+                    <button onClick={handlePageLeft}>left</button>
+                </div>
                 {dividedTiles.map((group, index) => {
-                    return <div className={props.displayGroup > 1 ? 'album-grid' : 'album-single'} >
+                    return <div className={groupDivisibilityClass} >
                         {index === slideIndex ? group.map(tile => {
                             return <div className="tile-group">
                                 <img alt={''} src={tile.coverArt}/>
@@ -63,8 +77,10 @@ export const Slider = props => {
                         }) : ''}
                     </div>;
                 })}
+                <div>
+                    <button onClick={handlePageRight}>right</button>
+                </div>
             </div>
-            <button onClick={handleIndexChange}>increment</button>
         </div>
     );
 };
