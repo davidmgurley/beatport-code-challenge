@@ -29,8 +29,14 @@ export const Slider = props => {
 
     useEffect(() => {
         let interval = null;
+
+        //divides the tiles into groups based on the requested group size and counts how many groups there are
         setDividedTiles(divideTilesByGroupSize(props.displayGroup, props.displayTiles));
+
+        //checks the highest number the group size is divisible by up to 5 so the tiles are arranged as nice as possible given variable group size and tile counts
         checkGroupDivisibility(props.displayGroup);
+
+        //checks if the timerActive state is active or not and sets the auto scrolling interval based on the input from the parent component
         timerActive ? interval = setInterval(() => {
             handlePageRight();
         }, props.interval * 1000) : clearInterval(interval);
@@ -61,20 +67,24 @@ export const Slider = props => {
         }
     }
 
+    //decrements the index when the left arrow is clicked. If the index is 0 it sets the index back around to the end of the array of tile groups
     function handlePageLeft () {
         const newIndex = slideIndex > 0 ? slideIndex - 1 : dividedTilesLength - 1;
         setSlideIndex(newIndex);
     }
 
+    //increments the index when the right arrow is clicked. if at the end of the array, it sets the index to 0
     function handlePageRight () {
         const newIndex = slideIndex < dividedTilesLength - 1 ? slideIndex + 1 : 0;
         setSlideIndex(newIndex);
     }
 
+    //sets the index to the corresponding index position as the button that was clicked in the lower nav bar
     function handleNavIndex (index) {
         setSlideIndex(index);
     }
 
+    //sets the timerActive state to the opposite of what it currents sits at. Currently controlled by mouseEnter and mouseLeave events
     function handleTimerToggle () {
         setTimerActive(!timerActive);
     }
@@ -111,6 +121,7 @@ export const Slider = props => {
     );
 };
 
+//default props so the slider behaves properly even if no props are fed to it from the parent component
 Slider.defaultProps = {
     interval: 4,
     displayGroup: 1,
