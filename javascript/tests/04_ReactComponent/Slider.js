@@ -25,15 +25,17 @@ export const Slider = props => {
     const [dividedTiles, setDividedTiles] = useState([]);
     const [dividedTilesLength, setDividedTilesLength] = useState(0);
     const [groupDivisibilityClass, setGroupDivisibilityClass] = useState('album-group-default');
+    const [timerActive, setTimerActive] = useState(true);
 
     useEffect(() => {
+        let interval = null;
         setDividedTiles(divideTilesByGroupSize(props.displayGroup, props.displayTiles));
         checkGroupDivisibility(props.displayGroup);
-        const interval = setInterval(() => {
+        timerActive ? interval = setInterval(() => {
             handlePageRight();
-        }, props.interval * 1000);
+        }, props.interval * 1000) : clearInterval(interval);
         return () => clearInterval(interval);
-    }, [dividedTilesLength, slideIndex]);
+    }, [dividedTilesLength, slideIndex, timerActive]);
 
     function divideTilesByGroupSize (groupSize, displayTiles) {
         const arrayOfArrays = [];
@@ -73,8 +75,12 @@ export const Slider = props => {
         setSlideIndex(index);
     }
 
+    function handleTimerToggle () {
+        setTimerActive(!timerActive);
+    }
+
     return (
-        <div className="slider">
+        <div onMouseEnter={handleTimerToggle} onMouseLeave={handleTimerToggle} className="slider">
             <div className="mainSlider">
                 <div>
                     <button onClick={handlePageLeft}>left</button>
