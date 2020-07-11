@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // eslint-disable-line no-unused-vars
+import React, { useState, useEffect } from 'react';
 import { SliderNavigation } from './SliderNavigation';
 import './slider.scss';
 
@@ -23,18 +23,24 @@ export const Slider = props => {
 
     const [slideIndex, setSlideIndex] = useState(0);
     const [dividedTiles, setDividedTiles] = useState([]);
+    const [dividedTilesLength, setDividedTilesLength] = useState(0);
     const [groupDivisibilityClass, setGroupDivisibilityClass] = useState('album-group-default');
 
     useEffect(() => {
         setDividedTiles(divideTilesByGroupSize(props.displayGroup, props.displayTiles));
         checkGroupDivisibility(props.displayGroup);
-    }, []);
+        const interval = setInterval(() => {
+            handlePageRight();
+        }, 4000);
+        return () => clearInterval(interval);
+    }, [dividedTilesLength, slideIndex]);
 
     const divideTilesByGroupSize = (groupSize, displayTiles) => {
         const arrayOfArrays = [];
         for (var i = 0; i < displayTiles.length; i += groupSize) {
             arrayOfArrays.push(displayTiles.slice(i,i + groupSize));
         }
+        setDividedTilesLength(arrayOfArrays.length);
         return arrayOfArrays;
     };
 
@@ -54,12 +60,13 @@ export const Slider = props => {
     };
 
     const handlePageLeft = () => {
-        const newIndex = slideIndex > 0 ? slideIndex - 1 : dividedTiles.length - 1;
+        const newIndex = slideIndex > 0 ? slideIndex - 1 : dividedTilesLength - 1;
         setSlideIndex(newIndex);
     };
 
     const handlePageRight = () => {
-        const newIndex = slideIndex < dividedTiles.length - 1 ? slideIndex + 1 : 0;
+        const newIndex = slideIndex < dividedTilesLength - 1 ? slideIndex + 1 : 0;
+        console.log('this ran');
         setSlideIndex(newIndex);
     };
 
