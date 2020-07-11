@@ -20,6 +20,7 @@ const App = () => {
     let content = (
         <React.Fragment>
             <Slider
+                interval={1}
                 displayTiles={shuffledArray}
                 displayGroup={3}
             />
@@ -28,6 +29,7 @@ const App = () => {
                 displayGroup={2}
             />
             <Slider
+                interval={8}
                 displayTiles={shuffledArray}
                 displayGroup={10}
             />

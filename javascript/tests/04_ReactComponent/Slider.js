@@ -31,20 +31,20 @@ export const Slider = props => {
         checkGroupDivisibility(props.displayGroup);
         const interval = setInterval(() => {
             handlePageRight();
-        }, 4000);
+        }, props.interval * 1000);
         return () => clearInterval(interval);
     }, [dividedTilesLength, slideIndex]);
 
-    const divideTilesByGroupSize = (groupSize, displayTiles) => {
+    function divideTilesByGroupSize (groupSize, displayTiles) {
         const arrayOfArrays = [];
         for (var i = 0; i < displayTiles.length; i += groupSize) {
             arrayOfArrays.push(displayTiles.slice(i,i + groupSize));
         }
         setDividedTilesLength(arrayOfArrays.length);
         return arrayOfArrays;
-    };
+    }
 
-    const checkGroupDivisibility = (groupSize) => {
+    function checkGroupDivisibility (groupSize) {
         if (groupSize % 2 === 0) {
             setGroupDivisibilityClass('album-group-2');
         }
@@ -57,22 +57,21 @@ export const Slider = props => {
         if (groupSize % 5 === 0) {
             setGroupDivisibilityClass('album-group-5');
         }
-    };
+    }
 
-    const handlePageLeft = () => {
+    function handlePageLeft () {
         const newIndex = slideIndex > 0 ? slideIndex - 1 : dividedTilesLength - 1;
         setSlideIndex(newIndex);
-    };
+    }
 
-    const handlePageRight = () => {
+    function handlePageRight () {
         const newIndex = slideIndex < dividedTilesLength - 1 ? slideIndex + 1 : 0;
-        console.log('this ran');
         setSlideIndex(newIndex);
-    };
+    }
 
-    const handleNavIndex = (index) => {
+    function handleNavIndex (index) {
         setSlideIndex(index);
-    };
+    }
 
     return (
         <div className="slider">
