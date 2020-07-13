@@ -4,6 +4,6 @@ import './slider.scss';
 export const SliderNavigation = props => {
     const setNavIndex = () => props.handleNavIndex(props.index);
     return (
-        <button onClick={setNavIndex}>{props.index}</button>
+        <button className="lowerNavButon" onClick={setNavIndex}/>
     );
 };

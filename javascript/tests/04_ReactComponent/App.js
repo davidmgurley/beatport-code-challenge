@@ -15,14 +15,13 @@ const App = () => {
     };
     /* eslint-disable no-console */
     var shuffledArray = shuffleArray(fixtures);
-    console.log(shuffledArray);
 
     let content = (
         <React.Fragment>
             <Slider
-                interval={1}
+                interval={6}
                 displayTiles={shuffledArray}
-                displayGroup={3}
+                displayGroup={4}
             />
             <Slider
                 displayTiles={shuffledArray}

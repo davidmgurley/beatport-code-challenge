@@ -92,23 +92,32 @@ export const Slider = props => {
     return (
         <div onMouseEnter={handleTimerToggle} onMouseLeave={handleTimerToggle} className="slider">
             <div className="mainSlider">
-                <div>
-                    <button onClick={handlePageLeft}>left</button>
+                <div className="sliderHeader">
+                    <h3>{props.sliderTitle}</h3>
+                    <div className="headerNav">
+                        <button onClick={handlePageLeft}>left</button>
+                        <button onClick={handlePageRight}>right</button>
+                    </div>
                 </div>
-                {dividedTiles.map((group, index) => {
-                    return index === slideIndex ?
-                        <div className={groupDivisibilityClass}>
-                            {group.map(tile => {
-                                return <div className="tile-group">
-                                    <img alt={''} src={tile.coverArt}/>
-                                </div>;
-                            })}
-                        </div> : '';
-                })}
-                <div>
-                    <button onClick={handlePageRight}>right</button>
+                <div className="sliderCenter">
+                    <div>
+                        <button onClick={handlePageLeft}>left</button>
+                    </div>
+                    {dividedTiles.map((group, index) => {
+                        return index === slideIndex ?
+                            <div className={groupDivisibilityClass}>
+                                {group.map(tile => {
+                                    return <div className="tile-group">
+                                        <img alt={''} src={tile.coverArt}/>
+                                    </div>;
+                                })}
+                            </div> : '';
+                    })}
+                    <div>
+                        <button onClick={handlePageRight}>right</button>
+                    </div>
                 </div>
-                <div className="lowerNav">
+                <div className="footerNav">
                     {dividedTiles.map((group, index) => {
                         return <SliderNavigation
                             index={index}
@@ -125,6 +134,7 @@ export const Slider = props => {
 Slider.defaultProps = {
     interval: 4,
     displayGroup: 1,
+    sliderTitle: 'Beatport Tracks',
     displayTiles: [
         {
             artist: 'Pink Floyd',
