@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import fixtures from './fixtureData/fixture.json';
 import { Slider } from './Slider';
 
@@ -13,7 +13,7 @@ const App = () => {
         }
         return array;
     };
-    /* eslint-disable no-console */
+
     var shuffledArray = shuffleArray(fixtures);
 
     let content = (
