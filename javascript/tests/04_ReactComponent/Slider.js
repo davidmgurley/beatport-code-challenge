@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaCaretSquareLeft, FaCaretSquareRight } from 'react-icons/fa';
 import { SliderNavigation } from './SliderNavigation';
 import './slider.scss';
 
@@ -16,8 +17,6 @@ import './slider.scss';
  * c. The Slider should be able to take different types of slides. For example,
  * it could be a single image or a set of tiles. Reference Beatport.com for an example
  */
-
-/* eslint-disable no-console */
 
 export const Slider = props => {
 
@@ -84,7 +83,7 @@ export const Slider = props => {
         setSlideIndex(index);
     }
 
-    //sets the timerActive state to the opposite of what it currents sits at. Currently controlled by mouseEnter and mouseLeave events
+    //sets the timerActive state to the opposite of what it currents sits at. Controlled by mouseEnter and mouseLeave events
     function handleTimerToggle () {
         setTimerActive(!timerActive);
     }
@@ -93,33 +92,28 @@ export const Slider = props => {
         <div onMouseEnter={handleTimerToggle} onMouseLeave={handleTimerToggle} className="slider">
             <div className="mainSlider">
                 <div className="sliderHeader">
-                    <h3>{props.sliderTitle}</h3>
+                    <h3 className="sliderHeaderTitle">{props.sliderTitle}</h3>
                     <div className="headerNav">
-                        <button onClick={handlePageLeft}>left</button>
-                        <button onClick={handlePageRight}>right</button>
+                        <FaCaretSquareLeft className="headerNavButtonLeft" onClick={handlePageLeft}/>
+                        <FaCaretSquareRight className="headerNavButtonRight" onClick={handlePageRight}/>
                     </div>
                 </div>
                 <div className="sliderCenter">
-                    <div>
-                        <button onClick={handlePageLeft}>left</button>
-                    </div>
                     {dividedTiles.map((group, index) => {
                         return index === slideIndex ?
                             <div className={groupDivisibilityClass}>
                                 {group.map(tile => {
-                                    return <div className="tile-group">
+                                    return <div className="tileGroup">
                                         <img alt={''} src={tile.coverArt}/>
                                     </div>;
                                 })}
                             </div> : '';
                     })}
-                    <div>
-                        <button onClick={handlePageRight}>right</button>
-                    </div>
                 </div>
                 <div className="footerNav">
                     {dividedTiles.map((group, index) => {
                         return <SliderNavigation
+                            slideIndex={slideIndex}
                             index={index}
                             handleNavIndex={handleNavIndex}
                         />;

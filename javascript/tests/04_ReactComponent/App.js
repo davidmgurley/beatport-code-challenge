@@ -19,7 +19,7 @@ const App = () => {
     let content = (
         <React.Fragment>
             <Slider
-                interval={6}
+                interval={1}
                 displayTiles={shuffledArray}
                 displayGroup={4}
             />

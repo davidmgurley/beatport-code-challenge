@@ -59,12 +59,41 @@
 .footerNav {
     width: 100;
     display: grid;
+    grid-gap: 2px;
     grid-auto-columns: 1fr;
     grid-auto-flow: column;
+    margin-right: 1px;
+    margin-left: 1px;
 }
 
-.lowerNavButton {
-    height: 8px
+.footerNav button {
+    height: 6px;
+    background-color: #646464;
+    border: 0;
+}
+
+.footerNav button:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.footerNav button:focus {
+    outline: none;
+}
+
+.activeIndex {
+    background-color: #BBBBBB !important;
+}
+
+.sliderHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: white;
+}
+
+.sliderHeaderTitle {
+    margin-left: 8px;
 }
 
 img {
